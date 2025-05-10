@@ -357,12 +357,12 @@ img, svg{
 }
 /*Acaba el el contingut de Home*/
 
-/*Comença el Slider del Menú*/
+/* Comença el Slider del Menú */
 .container {
   max-width: 750px;
   margin: auto;
   margin-top: 0px;
-  margin-left: 300px ;
+  margin-left: 300px;
   position: relative;
   background: white;
   text-align: center;
@@ -370,14 +370,14 @@ img, svg{
   overflow: hidden;
 }
 
-.container h2{
+.container h2 {
   margin: 0;
   font-size: 30px;
   font-weight: 100;
   color: black;
 }
 
-.container hr{
+.container hr {
   width: 58%;
   height: 4px;
   border: none;
@@ -385,29 +385,29 @@ img, svg{
   margin-top: 30px;
 }
 
-.container .slides{
-  width: 400%;
+.container .slides {
+  width: 500%;
   left: 0;
   padding-left: 0;
   padding-top: 20px;
   overflow: hidden;
   list-style: none;
   position: relative;
-  transition: all .8s cubic-bezier(1, 0, 0, 1);
+  transition: all 0.8s cubic-bezier(1, 0, 0, 1);
+  display: flex;
 }
 
-.slides li{
-  width: 25%;
-  position: relative;
-  float: left;
+.slides li {
+  width: 20%;
+  flex-shrink: 0;
 }
 
-.container li p{
+.container li p {
   margin-top: 0;
   margin-bottom: 20px;
 }
 
-.container li q{
+.container li q {
   max-width: 98%;
   margin: auto;
   color: #666666;
@@ -415,7 +415,7 @@ img, svg{
   font-weight: bold;
 }
 
-.container li img{
+.container li img {
   width: 68px;
   border-radius: 50%;
   vertical-align: middle;
@@ -430,74 +430,82 @@ img, svg{
   display: block;
 }
 
-.navigation{
+.navigation {
   display: block;
   list-style: none;
   text-align: center;
-  border: 40px;
   position: absolute;
-  width: 184px;
-  left: 50%;
-  margin-left: -52px;
+  width: 100%;
+  bottom: 20px;
+  left: 0;
 }
 
-.container input{
+.container input {
   display: none;
 }
 
-.navigation label{
-  float: left;
+.navigation label {
+  display: inline-block;
   margin: 6px;
-  display: block;
   height: 10px;
   width: 10px;
   border-radius: 50%;
   border: solid 2px #323232;
 }
 
-#radio1:checked ~ .slides{
+#radio1:checked ~ .slides {
   transform: translateX(0%);
 }
 
-#radio2:checked ~ .slides{
-  transform: translateX(-25%);
+#radio2:checked ~ .slides {
+  transform: translateX(-20%);
 }
 
-#radio3:checked ~ .slides{
-  transform: translateX(-50%);
+#radio3:checked ~ .slides {
+  transform: translateX(-40%);
 }
 
-.navigation label:hover{
+#radio4:checked ~ .slides {
+  transform: translateX(-60%);
+}
+
+#radio5:checked ~ .slides {
+  transform: translateX(-80%);
+}
+
+.navigation label:hover {
   cursor: pointer;
 }
 
 #radio1:checked ~ .navigation label#radioSelect1,
 #radio2:checked ~ .navigation label#radioSelect2,
-#radio3:checked ~ .navigation label#radioSelect3 {
+#radio3:checked ~ .navigation label#radioSelect3,
+#radio4:checked ~ .navigation label#radioSelect4,
+#radio5:checked ~ .navigation label#radioSelect5 {
   background: #323232;
 }
 
 @media screen and (max-width: 480px) {
-  .container li p{
+  .container li p {
     padding-left: 0.5em;
     padding-right: 0.5em;
   }
 
-  .container li q{
+  .container li q {
     font-size: 1em;
   }
 
-  .container li img{
+  .container li img {
     width: 2em;
     margin-left: -1em;
     margin-right: 0.25em;
   }
 
-  .container h2{
+  .container h2 {
     font-size: 20px;
   }
 }
-/*Acaba el Slider del Menú*/
+/* Acaba el Slider del Menú */
 
 /*Comença el Footer */
 
