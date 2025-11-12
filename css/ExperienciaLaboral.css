@@ -288,8 +288,15 @@ header {
 .image {
   object-fit: cover;
   width: 100%;
-  height: 150px;
-  margin-bottom: 20px;
+  height: 100%;
+  margin-bottom: 0;
+}
+
+.image .imatge {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .title {
