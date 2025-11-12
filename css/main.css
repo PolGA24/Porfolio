@@ -583,3 +583,80 @@ img, svg{
   }
 }
 /*Acaba el Footer*/
+
+/*Responsive*/
+@media (max-width: 768px) {
+
+
+    .navbar {
+        flex-direction: column; /* Apila els elements */
+        height: auto; /* L'alçada ara és automàtica */
+        width: 90%; /* Ocupa el 90% en mòbils */
+        padding: 10px;
+        box-shadow: 2px 2px var(--main-color);
+    }
+
+    .option {
+        width: 100%; /* Cada opció ocupa tot l'ample */
+        margin-right: 0;
+        margin-bottom: 5px; /* Separem les opcions */
+    }
+
+    .option:last-child {
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+
+    /* --- Contingut Home --- */
+    .section-one {
+        padding: 30px 20px; /* Reduïm el 'padding' (60px era massa) */
+        margin-top: 30px;
+    }
+    
+    /* Reordenem la fila per a mòbil (imatge a dalt, text a baix) */
+    .row {
+        flex-direction: column-reverse; /* Posa el segon element (imatge) a dalt */
+        align-items: center; /* Centra els elements */
+    }
+
+    /* Centrem la imatge */
+    .porfolio-boy-img-col {
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    /* Ajustem la imatge i el text superposat */
+    .porfolio-boy-img {
+        width: 200px; /* Una mida més adient per a mòbil */
+        height: 200px;
+    }
+
+    .boy-name {
+        position: relative; /* Deixa de ser absolut per no desbordar */
+        left: auto;
+        bottom: auto;
+        margin-top: -40px; /* El pugem una mica sobre la imatge */
+        z-index: 10;
+        text-align: center;
+        width: auto; /* Amplada automàtica */
+        display: inline-block; /* Perquè s'ajusti al text */
+    }
+    
+    /* Reduïm la mida de la font del títol */
+    .TitolCVPrincipal {
+        font-size: 36px; /* 48px era massa gran */
+        line-height: 1.2;
+    }
+
+    .TextCVPrincipal {
+        font-size: 16px; /* Mida de text més estàndard */
+    }
+
+    /* --- Slider --- */
+    /* El teu slider ja té una media query per a 480px, */
+    /* però assegurem que el contenidor principal s'ajusta */
+    .container {
+        width: 95%; /* Ocupa quasi tot l'ample */
+    }
+}
