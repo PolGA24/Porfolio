@@ -364,6 +364,8 @@ main { padding-top: calc(var(--header-h) + env(safe-area-inset-top, 0px)); }
   transition: color .2s ease, border-color .2s ease;
 }
 .link-mono:hover { color: var(--text); border-color: var(--text); }
+.link-secondary { color: var(--text-2); font-weight: 400; border-bottom-color: transparent; }
+.link-secondary:hover { color: var(--primary); border-color: var(--text-2); }
 
 /* ---------- Portada ---------- */
 .hero { padding-top: 2.5rem; }
