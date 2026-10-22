@@ -1,177 +1,537 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <link rel="stylesheet" href="./css/reset.css">
-        <link rel="stylesheet" href="./css/main.css">
-    </head>
-    <!--Comença el Loader-->
-    <body>
-        <div id="preloader">
-            <div class="typing-indicator">
-                <div class="typing-circle"></div>
-                <div class="typing-circle"></div>
-                <div class="typing-circle"></div>
-                <div class="typing-shadow"></div>
-                <div class="typing-shadow"></div>
-                <div class="typing-shadow"></div>
-            </div>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title data-i18n="meta.title">Pol González Arribas — Desarrollador web y multiplataforma</title>
+  <meta name="description" data-i18n-content="meta.description" content="Portfolio y CV de Pol González Arribas, desarrollador web y multiplataforma junior en Barcelona.">
+  <meta name="theme-color" content="#FAF8F5">
+  <link rel="icon" href="img/pol-avatar.jpg">
+
+  <!-- Aplica el tema guardado antes de pintar la página (evita el parpadeo) -->
+  <script>
+    (function () {
+      var theme = null;
+      try { theme = localStorage.getItem('theme'); } catch (e) {}
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,300..500,0,0&display=block">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">Saltar al contenido</a>
+
+  <!-- CABECERA -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top">
+        <span class="brand-name">Pol González<span class="brand-surname"> Arribas</span></span>
+        <span class="brand-tag">Portfolio · CV</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Principal" data-i18n-aria="a11y.mainNav">
+        <a href="#about" data-section="about">01. <span data-i18n="nav.about">Sobre mí</span></a>
+        <a href="#experience" data-section="experience">02. <span data-i18n="nav.experience">Experiencia</span></a>
+        <a href="#projects" data-section="projects">03. <span data-i18n="nav.projects">Proyectos</span></a>
+        <a href="#skills" data-section="skills">04. <span data-i18n="nav.skills">Habilidades</span></a>
+        <a href="#contact" data-section="contact">05. <span data-i18n="nav.contact">Contacto</span></a>
+      </nav>
+
+      <div class="header-tools">
+        <div class="lang-switch" role="group" aria-label="Idioma" data-i18n-aria="a11y.language">
+          <button type="button" data-lang="es" aria-pressed="true" lang="es" title="Español">ES</button>
+          <span aria-hidden="true">/</span>
+          <button type="button" data-lang="ca" aria-pressed="false" lang="ca" title="Català">CA</button>
+          <span aria-hidden="true">/</span>
+          <button type="button" data-lang="en" aria-pressed="false" lang="en" title="English">EN</button>
         </div>
-    <!--Acaba el Loader-->
-    <!--Comença el Navigator Bar (navbar)-->
-        <header>
-            <div class="navbar">
-                <div class="option">
-                    <input checked="" value="option1" name="btn" type="radio" class="input" />
-                    <div class="btn">
-                        <a href="index.html"><span class="span">HOME</span></a>
-                    </div>
-                </div>
-                <div class="option">
-                    <input value="option2" name="btn" type="radio" class="input" />
-                    <div class="btn">
-                        <a href="aboutme.html"><span class="span">ABOUT ME</span></a>
-                    </div>
-                </div>
-                <div class="option">
-                    <input value="option3" name="btn" type="radio" class="input" />
-                    <div class="btn">
-                        <a href="experiencialaboral.html"><span class="span">EXPERIÈNCIA LABORAL</span></a>
-                    </div>
-                </div>
-                <div class="option">
-                    <input value="option4" name="btn" type="radio" class="input" />
-                    <div class="btn">
-                        <a href="formacioacademica.html"><span class="span">CURRÍCULUM</span></a>
-                    </div>
-                </div>
-                <div class="option">
-                    <input value="option5" name="btn" type="radio" class="input" />
-                    <div class="btn">
-                        <a href="habilitats.html"><span class="span">COMPETÈNCIES</span></a>
-                    </div>
-                </div>
-                <div class="option">
-                    <input value="option6" name="btn" type="radio" class="input" />
-                    <div class="btn">
-                        <a href="projectes.html"><span class="span">PROJECTES</span></a>
-                    </div>
-                </div>
-                <div class="option">
-                    <input value="option7" name="btn" type="radio" class="input" />
-                    <div class="btn">
-                        <a href="contacte.html"><span class="span">CONTACTE</span></a>
-                    </div>
-                </div>
-            </div>
-        <!--Acaba el Navigator Bar (navbar)-->
-        <!--Comença el Contingut de Home-->
-        </header>
-            <section class="section-one" id="home">
-                <div class="row section-one-row">
-                    <div class="col-xxl-6 col-xl-6 col-lg-6">
-                        <p class="bon-dia">Benvingut👋</p>
-                        <h1 class="TitolCVPrincipal">Portafoli Pol González Arribas</h1>
-                        <h2 class="TextCVPrincipal">Soc en Pol i soc Desenvolupador d'Aplicacions</h2>
-                        <h2 class="TextCVPrincipal">apasionat per el món de la programació y crear coses noves </h2>
-                        <h2 class="TextCVPrincipal">i que aporten valor al món. També tinc experiencia en el món Web </h2>
-                        <h2 class="TextCVPrincipal">gestionan pàginas a empreses.</h2>
-                        <div class="saber-mes-button">
-                            <a href="aboutme.html" class="sabermesButton">
-                                Saber més
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-xxl-6 col-xl-6 col-lg-6 porfolio-boy-img-col">
-                        <div class="position relative zoom_in show">
-                            <img class="porfolio-boy-img" src="imatges/Foto Mia CV (2).PNG" alt="porfolio-boy">
-                            <div class="boy-name">
-                                <p class="ityped">Developer</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        <section class="section-one" id="reviews"> 
-  <div class="row section-one-row">
-    <div class="col-xxl-6 col-xl-6 col-lg-6">
-      <div class="container">
-        <h2>Reviews de <b>colaboradors/socis</b></h2>
-        <hr>
-
-        <!-- Radio buttons (deben estar al mismo nivel que .slides y .navigation) -->
-        <input type="radio" name="slides" id="radio1" checked>
-        <input type="radio" name="slides" id="radio2">
-        <input type="radio" name="slides" id="radio3">
-        <input type="radio" name="slides" id="radio4">
-        <input type="radio" name="slides" id="radio5">
-
-        <!-- Slides -->
-        <ul class="slides">
-          <li class="slide">
-            <p>
-              <q>És molt fàcil i agradable treballar en Pol perquè sempre aporta idees noves i està obert a què els altres també aportem, sempre disposat a aprendre tot allò que no sap i posant-li ganes des de l'inici fins al final del projecte perquè quedi el millor possible.</q>
-              <span class="author">Gerard Fornés</span>
-            </p>
-          </li>
-          <li class="slide">
-            <p>
-              <q>Es una persona con la que es fácil trabajar, aunque no sepa hacer exactamente el siempre tiene sus recursos, y nunca da problemas a la hora de asignar trabajos. Como compañero es alguien que querría tener en mi equipo.</q>
-              <span class="author">Jordi Ros</span>
-            </p>
-          </li>
-          <li class="slide">
-            <p>
-              <q>Trabajar con Pol siempre es un valor añadido. Es una persona clave dentro del equipo, comprometida con aportar lo mejor de sí mismo en todo momento. Destaca por su actitud serena y su capacidad para transmitir calma, incluso en los momentos más complejos del proyecto.</q>
-              <span class="author">Xavier Farrus</span>
-            </p>
-          </li>
-          <li class="slide">
-            <p>
-              <q>Vull destacar l’exelent treball del Pol. Sempre demostra compromis, profresionalitat i atenció al detall en cada tasca que realitza. La seva capacitat per treballar en equip i resoldre problemes de manera eficient es admirable.</q>
-              <span class="author">Daniel Toledo</span>
-            </p>
-          </li>
-          <li class="slide">
-            <p>
-              <q>Hemos tenido buena comunicación, lo que ha facilitado la puesta en acción en cuanto al trabajo. Cuando han habido momentos de estrés y presión en cuanto a tiempo y cantidad de trabajo no he notado un bajón de nivel así que también punto positivo.</q>
-              <span class="author">Dean Martin</span>
-            </p>
-          </li>
-        </ul>
-
-        <!-- Navigation (también al mismo nivel que .slides e inputs) -->
-        <div class="navigation">
-          <label for="radio1" id="radioSelect1"></label>
-          <label for="radio2" id="radioSelect2"></label>
-          <label for="radio3" id="radioSelect3"></label>
-          <label for="radio4" id="radioSelect4"></label>
-          <label for="radio5" id="radioSelect5"></label>
-        </div>
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Cambiar a modo oscuro">
+          <span class="material-symbols-outlined icon-dark" aria-hidden="true">dark_mode</span>
+          <span class="material-symbols-outlined icon-light" aria-hidden="true">light_mode</span>
+        </button>
+        <img class="header-avatar" src="img/pol-avatar.jpg" alt="" width="32" height="32">
       </div>
     </div>
-  </div>
-</section>
-        <!--Acaba el Contingut Home-->
-        <!--Comença el Footer (botons de contacte)-->
-    </body>
-    <footer>
-        <section class="footer" id="footer">
-            <div class="card">
-                <a class="social-link1" href="https://github.com/PolGA24">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" height="1em" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
-                </a>
-                <a class="social-link2" href="https://www.linkedin.com/in/pol-gonzález-arribas-0b76001a2/">
-                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512" fill="#fff"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg>          </a>
-                <a class="social-link3" href="mailto:polgonzarri@gmail.com" style="text-decoration: none; color: inherit;">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#fff"><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg>
-                 </a>
-                <a class="social-link4" href="https://wa.me/34682403773">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#fff"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
-                </a>
+  </header>
+
+  <main id="main">
+    <!-- 1. PORTADA -->
+    <section class="section hero" id="top">
+      <div class="container">
+        <div class="masthead">
+          <div class="masthead-left">
+            <span class="mono-tag accent" data-i18n="hero.edition">Monografía / Ed. 2026</span>
+            <span class="dot-sep" aria-hidden="true">·</span>
+            <span class="mono-tag muted" data-i18n="hero.place">Barcelona, Cataluña</span>
+          </div>
+          <div class="availability">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span class="mono-tag" data-i18n="hero.available">Disponible para trabajar · Barcelona</span>
+          </div>
+        </div>
+
+        <div class="grid-12 hero-grid">
+          <div class="hero-text">
+            <h1 class="display">Pol González Arribas</h1>
+            <p class="hero-role" data-i18n="hero.role">Desarrollador Web y Multiplataforma Junior · Barcelona</p>
+
+            <blockquote class="hero-quote">
+              <p data-i18n="hero.quote">“Construyo y mantengo webs de las que dependen clientes reales, y estoy creciendo hacia el desarrollo full-stack y móvil.”</p>
+            </blockquote>
+
+            <div class="action-bar">
+              <a class="btn btn-primary" href="cv/Pol-Gonzalez-Arribas-CV.pdf" download>
+                <span class="material-symbols-outlined" aria-hidden="true">description</span>
+                <span data-i18n="hero.cv">Descargar CV</span>
+              </a>
+              <a class="btn btn-outline" href="https://github.com/PolGA24" target="_blank" rel="noopener noreferrer">
+                <span class="material-symbols-outlined" aria-hidden="true">code</span>
+                GitHub ↗
+              </a>
+              <a class="btn btn-outline" href="https://www.linkedin.com/in/pol-gonz%C3%A1lez-arribas-0b76001a2/" target="_blank" rel="noopener noreferrer">
+                <span class="material-symbols-outlined" aria-hidden="true">work</span>
+                LinkedIn ↗
+              </a>
             </div>
-        </section>
-    </footer>
-    <!--Acaba el Footer (botons de contacte)-->
+          </div>
+
+          <div class="hero-portrait">
+            <figure class="plate portrait">
+              <div class="portrait-frame">
+                <img src="img/pol-retrato.jpg" alt="Retrato de Pol González Arribas" data-i18n-alt="hero.portraitAlt" width="900" height="1200">
+              </div>
+              <figcaption>
+                <span class="mono-tag muted" data-i18n="hero.fig">Fig. 01 / Retrato del autor</span>
+                <span class="mono-tag accent">DAM · BCN</span>
+              </figcaption>
+              <p class="mono-meta small muted">Pol González Arribas — Barcelona, 2026</p>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. SOBRE MÍ -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="folio-header">
+          <h2 class="mono-label" data-i18n="about.label">№ 01 / Prólogo y sobre mí</h2>
+          <span class="mono-meta small muted" data-i18n="about.meta">Perfil base</span>
+        </div>
+
+        <div class="grid-12">
+          <div class="col-8 reading">
+            <p class="lead" data-i18n="about.p1">Titulado en DAM con una base sólida en arquitecturas multiplataforma y sistemas orientados a objetos. Durante el último año en una agencia de marketing digital de Barcelona he lanzado y mantenido más de 25 instalaciones de WordPress y WooCommerce para clientes, con tráfico real, preservación del SEO y pasarelas de pago críticas para el negocio.</p>
+            <p class="body-muted" data-i18n="about.p2">Soy un desarrollador pragmático en transición hacia soluciones full-stack y móviles. Más allá de los gestores de contenido, diseño backends robustos e interfaces reactivas con Flutter, React y Python/Flask. Uso a diario flujos de trabajo con IA, revisando, probando y entendiendo cada línea antes de desplegarla.</p>
+          </div>
+
+          <aside class="col-4 ledger">
+            <div class="ledger-head mono-tag muted" data-i18n="stats.head">Datos y registros</div>
+            <div class="ledger-item">
+              <div class="ledger-row">
+                <span class="mono-meta strong accent" data-i18n="stat1.k">Producción</span>
+                <span class="ledger-num">25+</span>
+              </div>
+              <p class="ledger-title" data-i18n="stat1.t">Webs de clientes</p>
+              <p class="mono-meta small muted" data-i18n="stat1.d">Mantenidas y lanzadas sin caídas</p>
+            </div>
+            <div class="ledger-item">
+              <div class="ledger-row">
+                <span class="mono-meta strong accent" data-i18n="stat2.k">Plataforma activa</span>
+                <span class="ledger-num">1</span>
+              </div>
+              <p class="ledger-title" data-i18n="stat2.t">SaaS en producción</p>
+              <p class="mono-meta small muted" data-i18n="stat2.d">LitCount: operaciones y analítica para el ocio nocturno</p>
+            </div>
+            <div class="ledger-item">
+              <div class="ledger-row">
+                <span class="mono-meta strong accent" data-i18n="stat3.k">Arquitectura</span>
+                <span class="ledger-num">7</span>
+              </div>
+              <p class="ledger-title" data-i18n="stat3.t">Idiomas con WPML</p>
+              <p class="mono-meta small muted" data-i18n="stat3.d">Configuraciones multilingües y taxonomías sincronizadas</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. EXPERIENCIA -->
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="folio-header">
+          <h2 class="mono-label" data-i18n="exp.label">№ 02 / Experiencia</h2>
+          <span class="mono-meta small muted" data-i18n="exp.meta">Currículum y práctica profesional</span>
+        </div>
+
+        <div class="grid-12">
+          <div class="col-4 exp-meta">
+            <span class="mono-meta strong accent" data-i18n="exp.date">Sept. 2025 – Oct. 2026</span>
+            <h3 class="headline" data-i18n="exp.role">Desarrollador Web WordPress</h3>
+            <p class="exp-company">Optimoclick <span class="muted">· <span data-i18n="exp.companyType">Agencia de marketing digital</span></span></p>
+            <p class="mono-meta small muted exp-summary" data-i18n="exp.summary">Gestión continua para clientes de la agencia: e-commerce de alta disponibilidad, endpoints de seguimiento a medida y defensa del posicionamiento orgánico en mercados europeos.</p>
+          </div>
+
+          <ol class="col-8 entries">
+            <li>
+              <span class="entry-num">01.</span>
+              <div>
+                <h4 data-i18n="exp.i1.t">Webs nuevas y migraciones sin perder SEO</h4>
+                <p data-i18n="exp.i1.d">Migraciones completas de dominio, mapas de redirecciones 301 y despliegues de staging a producción sin pérdida de tráfico orgánico.</p>
+              </div>
+            </li>
+            <li>
+              <span class="entry-num">02.</span>
+              <div>
+                <h4 data-i18n="exp.i2.t">Catálogos y pagos con WooCommerce</h4>
+                <p data-i18n="exp.i2.d">Flujos de pago seguros, variaciones de producto, sincronización de inventario e integraciones con Redsys y Stripe mediante webhooks.</p>
+              </div>
+            </li>
+            <li>
+              <span class="entry-num">03.</span>
+              <div>
+                <h4 data-i18n="exp.i3.t">Integración de formularios con CRM y seguimiento de leads</h4>
+                <p data-i18n="exp.i3.d">Endpoints webhook a medida que envían los formularios validados a Zoho CRM conservando los parámetros UTM de atribución.</p>
+              </div>
+            </li>
+            <li>
+              <span class="entry-num">04.</span>
+              <div>
+                <h4 data-i18n="exp.i4.t">Webs multilingües con WPML</h4>
+                <p data-i18n="exp.i4.d">Configuración multidivisa, URLs localizadas y traducciones sincronizadas entre taxonomías para clientes comerciales europeos.</p>
+              </div>
+            </li>
+            <li>
+              <span class="entry-num">05.</span>
+              <div>
+                <h4 data-i18n="exp.i5.t">SEO técnico y rendimiento</h4>
+                <p data-i18n="exp.i5.d">Datos estructurados JSON-LD automatizados, Core Web Vitals optimizadas, menor TTFB del servidor y PageSpeed móvil por encima de 90.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. PROYECTOS -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="folio-header">
+          <h2 class="mono-label" data-i18n="proj.label">№ 03 / Proyectos destacados</h2>
+          <span class="mono-meta small muted" data-i18n="proj.meta">Láminas y sistemas en producción</span>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Lámina 01: LitCount -->
+          <article class="card project">
+            <div class="card-head">
+              <span class="mono-tag accent" data-i18n="p1.plate">Lámina 01 / Registro de sistema</span>
+              <span class="badge" data-i18n="p1.badge">SaaS en producción</span>
+            </div>
+            <figure class="project-media">
+              <button type="button" class="zoomable" data-full="img/litcount.jpg">
+                <img src="img/litcount.jpg" alt="Página de inicio de LitCount: «Controla la Noche», plataforma de gestión y analítica para salas y eventos" data-i18n-alt="p1.alt" width="1600" height="807" loading="lazy">
+              </button>
+            </figure>
+            <div class="card-body">
+              <h3 class="headline">LitCount</h3>
+              <p class="project-sub" data-i18n="p1.sub">TPV y analítica SaaS para locales de ocio nocturno.</p>
+              <p class="project-desc" data-i18n="p1.desc">Interfaz multiplataforma de pedidos en barra con conciliación de ventas en tiempo real. App de barra para tablet en Flutter, panel para propietarios en React, API REST en Python/Flask y más de 180 tests unitarios y de integración automatizados.</p>
+              <ul class="tags">
+                <li>Flutter</li><li>Python</li><li>Flask</li><li>React</li><li>SQL</li><li>Docker</li>
+              </ul>
+              <div class="card-links">
+                <a class="link-mono" href="https://github.com/PolGA24" target="_blank" rel="noopener noreferrer"><span data-i18n="proj.github">Ver en GitHub</span> ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Lámina 02: RPG de hábitos por voz -->
+          <article class="card project">
+            <div class="card-head">
+              <span class="mono-tag accent" data-i18n="p2.plate">Lámina 02 / Aplicación experimental</span>
+              <span class="badge" data-i18n="p2.badge">Concepto móvil</span>
+            </div>
+            <figure class="project-media phones">
+              <button type="button" class="zoomable phone" data-full="img/rpg-app-2.jpg">
+                <img src="img/rpg-app-2.jpg" alt="Captura de la app: gráfico radar de visión general con los atributos Físico, Mente, Social, Vida y Estilo" data-i18n-alt="p2.alt1" width="540" height="1101" loading="lazy">
+              </button>
+              <button type="button" class="zoomable phone" data-full="img/rpg-app-1.jpg">
+                <img src="img/rpg-app-1.jpg" alt="Captura de la app: desglose de nivel con barras de progreso de Fuerza, Vitalidad, Nutrición, Zen, Intelecto y Carisma" data-i18n-alt="p2.alt2" width="540" height="1103" loading="lazy">
+              </button>
+              <figcaption class="mono-tag muted phones-caption">
+                <span data-i18n="p2.fig1">Fig. 02a / Visión general</span>
+                <span data-i18n="p2.fig2">Fig. 02b / Desglose de nivel</span>
+              </figcaption>
+            </figure>
+            <div class="card-body">
+              <h3 class="headline" data-i18n="p2.title">RPG de hábitos por voz</h3>
+              <p class="project-sub" data-i18n="p2.sub">App móvil offline que convierte lo que cuentas de tu día en XP repartida en 14 atributos.</p>
+              <p class="project-desc" data-i18n="p2.desc">Diario por voz que transforma lo que dices en registros diarios de XP mediante clasificación de lenguaje natural en el propio dispositivo. Guarda el estado en local, sin depender de la nube, en una base de datos Isar ultrarrápida.</p>
+              <ul class="tags">
+                <li>Flutter</li><li>Dart</li><li>Isar</li><li>NLP</li>
+              </ul>
+              <div class="card-links">
+                <a class="link-mono" href="https://github.com/PolGA24" target="_blank" rel="noopener noreferrer"><span data-i18n="proj.github">Ver en GitHub</span> ↗</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Casos de agencia -->
+        <div class="cases">
+          <div class="cases-head">
+            <h3 class="mono-meta strong accent" data-i18n="cases.head">Resolución de incidencias en producción · Casos de agencia</h3>
+            <span class="mono-tag muted" data-i18n="cases.index">Índice 01–03</span>
+          </div>
+          <div class="cases-grid">
+            <div class="case">
+              <div class="case-meta">
+                <span class="mono-tag accent" data-i18n="caseA.tag">Caso A // Webhooks</span>
+                <span class="mono-tag muted">INFRA</span>
+              </div>
+              <h4 data-i18n="caseA.t">Recuperar leads perdidos del CRM</h4>
+              <p data-i18n="caseA.d">Diagnostiqué webhooks hacia Zoho CRM que se perdían en silencio por los límites de tiempo del hosting con mucho tráfico de campañas. Implementé reintentos en cola local y conservé las cadenas de atribución UTM.</p>
+            </div>
+            <div class="case">
+              <div class="case-meta">
+                <span class="mono-tag accent" data-i18n="caseB.tag">Caso B // Migración BD</span>
+                <span class="mono-tag muted">MYSQL</span>
+              </div>
+              <h4 data-i18n="caseB.t">Restaurar 692 fichas técnicas de producto</h4>
+              <p data-i18n="caseB.d">Script CLI a medida que remapeó entradas postmeta serializadas y corruptas de WooCommerce a taxonomías de producto válidas tras una actualización defectuosa de un plugin.</p>
+            </div>
+            <div class="case">
+              <div class="case-meta">
+                <span class="mono-tag accent" data-i18n="caseC.tag">Caso C // Maquetación CSS</span>
+                <span class="mono-tag muted">WEBKIT</span>
+              </div>
+              <h4 data-i18n="caseC.t">Un bug responsive solo en iPhone</h4>
+              <p data-i18n="caseC.d">Resolví un fallo de altura dinámica del viewport en WebKit de iOS (dvh ocultaba los botones de compra fijos en iOS 16+) con un flujo flex robusto y márgenes de safe-area.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. HABILIDADES -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="folio-header">
+          <h2 class="mono-label" data-i18n="skills.label">№ 04 / Habilidades</h2>
+          <span class="mono-meta small muted" data-i18n="skills.meta">Inventario técnico</span>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-group strong-rule">
+            <div class="skill-head">
+              <h3 data-i18n="g1.t">Uso profesional</h3>
+              <span class="mono-tag accent">CORE</span>
+            </div>
+            <ul class="tags tags-solid">
+              <li>WordPress</li><li>PHP</li><li>HTML</li><li>CSS</li><li>JavaScript</li><li>MySQL</li>
+            </ul>
+            <p class="skill-note" data-i18n="g1.d">Uso diario en producción de agencia, mantenimiento de clientes y despliegues.</p>
+          </div>
+          <div class="skill-group">
+            <div class="skill-head">
+              <h3 data-i18n="g2.t">En proyectos</h3>
+              <span class="mono-tag muted">DEV</span>
+            </div>
+            <ul class="tags tags-plain">
+              <li>Flutter/Dart</li><li>Python/Flask</li><li>Java</li><li>Kotlin</li><li>SQL</li><li>REST APIs</li><li>Git</li>
+            </ul>
+            <p class="skill-note" data-i18n="g2.d">Aplicado en apps multiplataforma, arquitectura SaaS y proyectos académicos.</p>
+          </div>
+          <div class="skill-group">
+            <div class="skill-head">
+              <h3 data-i18n="g3.t">Herramientas</h3>
+              <span class="mono-tag muted">SYS</span>
+            </div>
+            <ul class="tags tags-plain tags-quiet">
+              <li>VS Code</li><li>IntelliJ</li><li>cPanel</li><li>phpMyAdmin</li><li>Screaming Frog</li><li>Google Analytics</li><li>Search Console</li>
+            </ul>
+            <p class="skill-note" data-i18n="g3.d">Operaciones, auditorías técnicas de rastreo, servidores y analítica.</p>
+          </div>
+          <div class="skill-group strong-rule">
+            <div class="skill-head">
+              <h3 data-i18n="g4.t">Ingeniería con IA</h3>
+              <span class="mono-tag accent">SYN</span>
+            </div>
+            <ul class="tags tags-featured">
+              <li>Claude Code</li><li>ChatGPT</li><li>Gemini</li>
+            </ul>
+            <p class="skill-note" data-i18n="g4.d">Para prototipado rápido, generación de tests y depuración, siempre con revisión completa del código.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. FORMACIÓN E IDIOMAS -->
+    <section class="section">
+      <div class="container credentials">
+        <div class="credential">
+          <div>
+            <div class="credential-head">
+              <h2 class="mono-label" data-i18n="edu.label">Formación</h2>
+              <span class="mono-meta strong accent">2024–2026</span>
+            </div>
+            <h3 class="headline" data-i18n="edu.title">DAM — Desarrollo de Aplicaciones Multiplataforma</h3>
+            <p class="project-sub">La Salle Gràcia, Barcelona</p>
+            <p class="project-desc" data-i18n="edu.desc">Formación en arquitecturas nativas Android y de escritorio, normalización de bases de datos relacionales, concurrencia y patrones de diseño orientados a objetos.</p>
+          </div>
+          <div class="credential-foot">
+            <span class="mono-meta">
+              <span class="material-symbols-outlined accent" aria-hidden="true">school</span>
+              <span data-i18n="edu.foot">Título obtenido · Proyecto final SaaS</span>
+            </span>
+            <span class="mono-tag muted" data-i18n="edu.official">Oficial</span>
+          </div>
+        </div>
+
+        <div class="credential">
+          <div>
+            <div class="credential-head">
+              <h2 class="mono-label" data-i18n="lang.label">Idiomas</h2>
+              <span class="mono-meta small muted" data-i18n="lang.meta">Comunicación</span>
+            </div>
+            <h3 class="headline" data-i18n="lang.title">Competencia lingüística</h3>
+            <div class="languages">
+              <div class="language">
+                <div class="language-row">
+                  <span class="language-name" data-i18n="lang.native.name">Catalán y castellano</span>
+                  <span class="badge" data-i18n="lang.native.badge">Nativo</span>
+                </div>
+                <p data-i18n="lang.native.d">Bilingüe en conversaciones técnicas y en el día a día de la agencia.</p>
+              </div>
+              <div class="language">
+                <div class="language-row">
+                  <span class="language-name" data-i18n="lang.en.name">Inglés</span>
+                  <span class="badge badge-quiet" data-i18n="lang.en.badge">Nivel B1</span>
+                </div>
+                <p data-i18n="lang.en.d">Lectura técnica diaria, documentación de software y revisiones de código.</p>
+              </div>
+            </div>
+          </div>
+          <div class="credential-foot">
+            <span class="mono-meta">
+              <span class="material-symbols-outlined accent" aria-hidden="true">translate</span>
+              <span data-i18n="lang.foot">Preparado para entornos multilingües</span>
+            </span>
+            <span class="mono-tag muted">Barcelona</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. CONTACTO -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="folio-header">
+          <h2 class="mono-label" data-i18n="contact.label">№ 05 / Contacto</h2>
+          <span class="mono-meta small muted" data-i18n="contact.meta">Correspondencia y consultas</span>
+        </div>
+
+        <div class="grid-12">
+          <div class="col-5 contact-info">
+            <div>
+              <h3 class="headline-lg" data-i18n="contact.title">Trabajemos juntos</h3>
+              <p class="contact-intro" data-i18n="contact.intro">Si buscas un desarrollador fiable para reforzar las webs de tus clientes o un perfil junior comprometido para productos full-stack, escríbeme.</p>
+
+              <dl class="channels">
+                <div>
+                  <dt class="mono-tag muted" data-i18n="ch.mail">Correo electrónico</dt>
+                  <dd><a class="strong accent" href="mailto:polgonzarri@gmail.com">polgonzarri@gmail.com</a></dd>
+                </div>
+                <div>
+                  <dt class="mono-tag muted" data-i18n="ch.li">Red profesional</dt>
+                  <dd><a href="https://www.linkedin.com/in/pol-gonz%C3%A1lez-arribas-0b76001a2/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></dd>
+                </div>
+                <div>
+                  <dt class="mono-tag muted" data-i18n="ch.gh">Archivo de código</dt>
+                  <dd><a href="https://github.com/PolGA24" target="_blank" rel="noopener noreferrer">github.com/PolGA24 ↗</a></dd>
+                </div>
+              </dl>
+            </div>
+            <p class="contact-note" data-i18n="contact.note">Con base en Barcelona · Abierto a puestos a jornada completa híbridos o en remoto.</p>
+          </div>
+
+          <div class="col-7 card contact-card">
+            <div class="card-head">
+              <span class="mono-meta strong accent" data-i18n="form.head">Transmisión directa</span>
+              <span class="mono-tag muted" data-i18n="form.resp">Respuesta en 24 h</span>
+            </div>
+            <form class="contact-form" id="contact-form">
+              <div class="field">
+                <label for="contact-name" data-i18n="form.name">Tu nombre</label>
+                <input id="contact-name" name="name" type="text" autocomplete="name" required placeholder="Elena Miralles">
+              </div>
+              <div class="field">
+                <label for="contact-email" data-i18n="form.email">Correo electrónico</label>
+                <input id="contact-email" name="email" type="email" autocomplete="email" required placeholder="elena@empresa.com" data-i18n-placeholder="form.emailPh">
+              </div>
+              <div class="field">
+                <label for="contact-message" data-i18n="form.msg">Mensaje</label>
+                <textarea id="contact-message" name="message" rows="5" required placeholder="Hola Pol, tenemos una vacante para un desarrollador multiplataforma…" data-i18n-placeholder="form.msgPh"></textarea>
+              </div>
+              <div class="form-actions">
+                <button class="btn btn-primary" type="submit">
+                  <span data-i18n="form.send">Enviar mensaje</span>
+                  <span class="material-symbols-outlined" aria-hidden="true">send</span>
+                </button>
+                <span class="mono-tag muted" data-i18n="form.note">Confidencial</span>
+              </div>
+              <p class="form-notice" id="contact-notice" role="status" hidden data-i18n="form.ok">Se ha abierto tu aplicación de correo con el mensaje listo para enviar. ¡Gracias por escribir!</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- PIE -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-id">
+        <p>© <span id="year">2026</span> Pol González Arribas</p>
+        <p class="mono-meta small muted" data-i18n="footer.tagline">Desarrollo y arquitectura de software multiplataforma · Barcelona</p>
+      </div>
+      <nav class="footer-nav" aria-label="Pie de página" data-i18n-aria="a11y.footerNav">
+        <a href="#about" data-i18n="nav.about">Sobre mí</a>
+        <a href="#experience" data-i18n="nav.experience">Experiencia</a>
+        <a href="#projects" data-i18n="nav.projects">Proyectos</a>
+        <a href="#skills" data-i18n="nav.skills">Habilidades</a>
+        <a href="#contact" data-i18n="nav.contact">Contacto</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Navegación inferior (móvil y tablet) -->
+  <nav class="bottom-nav" aria-label="Secciones" data-i18n-aria="a11y.sectionsNav">
+    <a href="#about" data-section="about"><span class="material-symbols-outlined" aria-hidden="true">person</span><span data-i18n="nav.aboutShort">Perfil</span></a>
+    <a href="#experience" data-section="experience"><span class="material-symbols-outlined" aria-hidden="true">work_history</span><span data-i18n="nav.experienceShort">Trabajo</span></a>
+    <a href="#projects" data-section="projects"><span class="material-symbols-outlined" aria-hidden="true">folder_open</span><span data-i18n="nav.projects">Proyectos</span></a>
+    <a href="#skills" data-section="skills"><span class="material-symbols-outlined" aria-hidden="true">construction</span><span data-i18n="nav.skillsShort">Stack</span></a>
+    <a href="#contact" data-section="contact"><span class="material-symbols-outlined" aria-hidden="true">mail</span><span data-i18n="nav.contact">Contacto</span></a>
+  </nav>
+
+  <!-- Visor de imágenes de proyectos -->
+  <dialog class="lightbox" id="lightbox">
+    <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Cerrar" data-i18n-aria="a11y.close">
+      <span class="material-symbols-outlined" aria-hidden="true">close</span>
+    </button>
+    <img id="lightbox-img" src="" alt="">
+  </dialog>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
 </html>
-
-
